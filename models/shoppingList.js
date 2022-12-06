@@ -1,6 +1,6 @@
 import { pool } from "../db/index.js";
-import { createTable } from "../db/scripts/createTable.js"
-import { dropTable } from "../db/scripts/deleteTable.js"
+// import { createTable } from "../db/scripts/createTable.js"
+// import { dropTable } from "../db/scripts/deleteTable.js"
 
 export async function getShoppingList() {
   const data = await pool.query("SELECT * FROM shopping;");
@@ -22,7 +22,9 @@ export async function postListItem(listItem) {
 
 export async function deleteItem() {
   // const response = await pool.query('DELETE FROM shopping WHERE id=$1 RETURNING *;', [id])
- dropTable()
- createTable()
+//  dropTable()
+//  createTable()
   // return response.rows
+  const data = await pool.query("TRUNCATE TABLE shopping;");
+  
 }
