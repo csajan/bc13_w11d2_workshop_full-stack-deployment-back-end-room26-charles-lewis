@@ -1,6 +1,6 @@
 import { pool } from "../db/index.js";
-import {createTable} from "../db/scripts/createTable"
-import {deleteTable} from "../db/scripts/deleteTable"
+import { createTable } from "../db/scripts/createTable.js"
+import { deleteTable } from "../db/scripts/deleteTable.js"
 
 export async function getShoppingList() {
   const data = await pool.query("SELECT * FROM shopping;");
